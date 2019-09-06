@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azure"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    >
+
+    <EditText
+        android:id="@+id/Email_join"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/azure"
+        android:hint="Email"
+        android:selectAllOnFocus="true"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/Pass_join"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/azure"
+
+        android:hint="Password"
+        android:selectAllOnFocus="true"
+        android:inputType="textEmailAddress"
+        />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:hint="Sign Up"
+        android:background="@color/blue_light"
+        />
+</LinearLayout>
