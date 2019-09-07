@@ -12,15 +12,18 @@
         android:hint="Home"
         android:layout_width="wrap_content"
         />
+
     <Button
-        android:id="@+id/about"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_light"
-       android:layout_toLeftOf="@id/exit"
-        android:layout_alignParentBottom="true"
-        android:hint="About"
+        android:id="@+id/Abbout"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="0dp"
+        android:layout_toLeftOf="@id/exit"
+        android:background="@color/blue_light"
+        android:hint="About"
         />
+
     <Button
         android:id="@+id/exit"
         android:layout_height="wrap_content"
