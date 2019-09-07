@@ -12,24 +12,31 @@
     <EditText
         android:id="@+id/Email_join"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:background="@color/azure"
         android:hint="Email"
-        android:selectAllOnFocus="true"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true" />
 
     <EditText
         android:id="@+id/Pass_join"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@color/azure"
 
         android:hint="Password"
-        android:selectAllOnFocus="true"
         android:inputType="textEmailAddress"
-        />
+        android:selectAllOnFocus="true" />
+
+    <EditText
+        android:id="@+id/Pass_comp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:hint="Password Confirmation"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true" />
 
     <Button
         android:id="@+id/signup"

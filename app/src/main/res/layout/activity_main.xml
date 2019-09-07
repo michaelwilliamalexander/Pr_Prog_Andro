@@ -48,7 +48,7 @@
         android:hint="Login"
         android:background="@color/blue_light"
     />
-    <Button
+    <TextView
         android:id="@+id/join"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
