@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (email.getText().toString().equalsIgnoreCase("Admin") && pass.getText().toString().equalsIgnoreCase("123")) {
+                if (email.getText().toString().equalsIgnoreCase("michael.william@ti.ukdw.ac.id") && pass.getText().toString().equalsIgnoreCase("123")) {
                     Intent home = new Intent(MainActivity.this, HomeActivity.class);
                     finish();
                     startActivity(home);

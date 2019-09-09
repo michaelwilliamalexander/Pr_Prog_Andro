@@ -14,8 +14,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        prepare();
         exit();
         about();
+    }
+    protected  void prepare(){
+        this.getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,new Fragment_Home()).commit();
     }
     protected void about() {
         Button btn = (Button)findViewById(R.id.Abbout);
