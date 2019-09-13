@@ -32,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if(mail.getText().toString().isEmpty() && passw.getText().toString().isEmpty() && passconf.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(),"Email dan Password tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }else if(passw.getText().toString().equals(passconf.getText().toString())){
-                    Intent baru = new Intent(SignUpActivity.this,HomeActivity.class);
+                    Intent baru = new Intent(SignUpActivity.this, HomeActivity.class);
                     finish();
                     startActivity(baru);
                 }else{

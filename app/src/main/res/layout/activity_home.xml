@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/azure"
-    >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.logins.HomeActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_light"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
-        android:hint="Home"
-        android:layout_width="wrap_content"
-        />
-
-    <Button
-        android:id="@+id/Abbout"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="0dp"
-        android:layout_toLeftOf="@id/exit"
+        android:gravity="center"
+        android:minHeight="?actionBarSize"
+        android:padding="@dimen/appbar_padding"
         android:background="@color/blue_light"
-        android:hint="About"
-        />
+        android:layout_marginStart="130dp"
+        android:text="MyApps"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
-    <Button
-        android:id="@+id/exit"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/blue_light"
-        android:hint="EXIT"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        />
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="wrap_content"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
-</RelativeLayout>
+        android:background="@color/azure"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-36dp">
+
+        <com.google.android.material.tabs.TabLayout
+
+            android:id="@+id/tab"
+            app:tabIndicatorColor="@color/azure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_light" />
+    </androidx.viewpager.widget.ViewPager>
+
+    </com.google.android.material.appbar.AppBarLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
