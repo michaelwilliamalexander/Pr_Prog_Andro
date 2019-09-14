@@ -19,7 +19,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="155dp"
         android:text="MyApps"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
         />
@@ -29,7 +30,7 @@
         android:id="@+id/Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"

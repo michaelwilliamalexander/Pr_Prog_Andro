@@ -20,7 +20,7 @@
         android:minHeight="?actionBarSize"
         android:padding="@dimen/appbar_padding"
         android:background="@color/blue_light"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="155dp"
         android:text="MyApps"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
