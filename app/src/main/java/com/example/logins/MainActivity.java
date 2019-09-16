@@ -42,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (email.getText().toString().equalsIgnoreCase("michael.william@ti.ukdw.ac.id") && pass.getText().toString().equalsIgnoreCase("123")) {
+                    Bundle b = new Bundle();
+                    b.putString("Name", email.getText().toString());
                     Intent home = new Intent(MainActivity.this, HomeActivity.class);
+                    home.putExtras(b);
                     finish();
                     startActivity(home);
                 } else {
