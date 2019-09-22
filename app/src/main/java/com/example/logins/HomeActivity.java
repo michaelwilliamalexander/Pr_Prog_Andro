@@ -1,8 +1,11 @@
 package com.example.logins;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -47,21 +50,35 @@ public class HomeActivity extends AppCompatActivity {
             int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,WifiManager.WIFI_STATE_UNKNOWN);
             if(wifiState==WifiManager.WIFI_STATE_ENABLED){
                 Toast.makeText(getApplicationContext(),"WIFI ON",Toast.LENGTH_SHORT).show();
+                addNotification();
             }else if(wifiState==WifiManager.WIFI_STATE_DISABLED){
                 Toast.makeText(getApplicationContext(),"WIFI OFF",Toast.LENGTH_SHORT).show();
             }
         }
     };
 
-    protected void onResume(){
-        super.onResume();
-        registerReceiver(receiver, new IntentFilter("android.net.wifi.STATE_CHANGED_ACTION"));
+    protected void onStart(){
+        super.onStart();
+        registerReceiver(receiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 
     }
 
-    protected  void onPause(){
-        super.onPause();
+    protected  void onStop(){
+        super.onStop();
         unregisterReceiver(receiver);
+    }
+    private void addNotification(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setContentTitle("Hello")
+                .setContentText("Your WIFI is ON");
+        Intent notificationIntent = new Intent(this,HomeActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this,0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0,builder.build());
+
     }
 
 //    protected  void preparehome(){
