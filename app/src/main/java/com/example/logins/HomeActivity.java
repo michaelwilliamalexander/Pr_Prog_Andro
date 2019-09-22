@@ -56,10 +56,8 @@ public class HomeActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,WifiManager.WIFI_STATE_UNKNOWN);
             if(wifiState==WifiManager.WIFI_STATE_ENABLED){
-                Toast.makeText(getApplicationContext(),"WIFI ON",Toast.LENGTH_SHORT).show();
                 wifiOn(v);
             }else if(wifiState==WifiManager.WIFI_STATE_DISABLED){
-                Toast.makeText(getApplicationContext(),"WIFI OFF",Toast.LENGTH_SHORT).show();
                 wifiOff(v);
             }
         }
@@ -80,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_on)
                 .setContentTitle("Congratulation")
-                .setContentText("Yout WIFI already ON")
+                .setContentText("Your WIFI already ON")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
         notificationManagerCompat.notify(1,notification);
@@ -89,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_2)
                 .setSmallIcon(R.drawable.ic_off)
                 .setContentTitle("Congratulation")
-                .setContentText("Yout WIFI already OFF")
+                .setContentText("Your WIFI already OFF")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
         notificationManagerCompat.notify(2,notification);
