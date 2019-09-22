@@ -21,7 +21,10 @@
         android:minHeight="?actionBarSize"
         android:padding="@dimen/appbar_padding"
         android:background="@color/blue_light"
-        android:layout_marginStart="155dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:text="MyApps"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 

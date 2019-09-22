@@ -2,8 +2,10 @@ package com.example.logins;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -15,17 +17,20 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import static com.example.logins.App.CHANNEL_1;
+import static com.example.logins.App.CHANNEL_2;
+
 public class HomeActivity extends AppCompatActivity {
-    //boolean click = false;
+    private NotificationManagerCompat notificationManagerCompat;
     private TextView textView;
-    private  boolean isReceiverRegister = false;
     private WifiManager wifiManager;
+    private View v;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +46,9 @@ public class HomeActivity extends AppCompatActivity {
         Bundle b = in.getExtras();
         String s = b.getString("Name");
         textView = findViewById(R.id.title);
-        textView.setText(textView.getText()+" \n"+ s);
+        textView.setText(textView.getText()+"\n\n Welcome "+ s);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
     }
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -50,9 +57,10 @@ public class HomeActivity extends AppCompatActivity {
             int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,WifiManager.WIFI_STATE_UNKNOWN);
             if(wifiState==WifiManager.WIFI_STATE_ENABLED){
                 Toast.makeText(getApplicationContext(),"WIFI ON",Toast.LENGTH_SHORT).show();
-                addNotification();
+                wifiOn(v);
             }else if(wifiState==WifiManager.WIFI_STATE_DISABLED){
                 Toast.makeText(getApplicationContext(),"WIFI OFF",Toast.LENGTH_SHORT).show();
+                wifiOff(v);
             }
         }
     };
@@ -67,19 +75,26 @@ public class HomeActivity extends AppCompatActivity {
         super.onStop();
         unregisterReceiver(receiver);
     }
-    private void addNotification(){
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle("Hello")
-                .setContentText("Your WIFI is ON");
-        Intent notificationIntent = new Intent(this,HomeActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(this,0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0,builder.build());
-
+    private  void wifiOn(View v ){
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_on)
+                .setContentTitle("Congratulation")
+                .setContentText("Yout WIFI already ON")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(1,notification);
     }
+    private void wifiOff(View v){
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2)
+                .setSmallIcon(R.drawable.ic_off)
+                .setContentTitle("Congratulation")
+                .setContentText("Yout WIFI already OFF")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(2,notification);
+    }
+
 
 //    protected  void preparehome(){
 //        this.getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,new Home()).commit();
