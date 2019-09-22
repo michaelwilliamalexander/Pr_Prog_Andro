@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     //boolean click = false;
     private TextView textView;
     private  boolean isReceiverRegister = false;
+    private WifiManager wifiManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,36 +41,29 @@ public class HomeActivity extends AppCompatActivity {
         textView.setText(textView.getText()+" \n"+ s);
     }
 
-    protected BroadcastReceiver receiver = new BroadcastReceiver() {
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            ConnectivityManager connectivityManager = (ConnectivityManager)
-                    context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            if(networkInfo!=null){
-                if(networkInfo.getType() == ConnectivityManager.TYPE_WIFI){
-                   Toast.makeText(getApplicationContext(),"Wifi on",Toast.LENGTH_LONG).show();
-                }
+            int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,WifiManager.WIFI_STATE_UNKNOWN);
+            if(wifiState==WifiManager.WIFI_STATE_ENABLED){
+                Toast.makeText(getApplicationContext(),"WIFI ON",Toast.LENGTH_SHORT).show();
+            }else if(wifiState==WifiManager.WIFI_STATE_DISABLED){
+                Toast.makeText(getApplicationContext(),"WIFI OFF",Toast.LENGTH_SHORT).show();
             }
-
         }
     };
 
     protected void onResume(){
         super.onResume();
-        if(!isReceiverRegister){
-            isReceiverRegister = true;
-            registerReceiver(receiver, new IntentFilter("android.net.wifi.STATE_CHANGE"));
-        }
+        registerReceiver(receiver, new IntentFilter("android.net.wifi.STATE_CHANGED_ACTION"));
+
     }
 
     protected  void onPause(){
         super.onPause();
-        if(!isReceiverRegister){
-            isReceiverRegister = false;
-            registerReceiver(receiver, new IntentFilter("android.net.wifi.STATE_CHANGE"));
-        }
+        unregisterReceiver(receiver);
     }
+
 //    protected  void preparehome(){
 //        this.getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,new Home()).commit();
 //    }
