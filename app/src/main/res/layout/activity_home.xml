@@ -28,6 +28,18 @@
         android:text="MyApps"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="scheduleJob"
+            android:text="Schedule Job" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cancelJob"
+            android:text="Cancel Job" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
@@ -35,7 +47,6 @@
         android:background="@color/azure"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-36dp">
-
         <com.google.android.material.tabs.TabLayout
 
             android:id="@+id/tab"
@@ -43,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue_light" />
+
     </androidx.viewpager.widget.ViewPager>
 
     </com.google.android.material.appbar.AppBarLayout>

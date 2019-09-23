@@ -27,7 +27,6 @@ public class App extends Application {
                     "WIFI OFF",
                     NotificationManager.IMPORTANCE_DEFAULT
             );
-
             NotificationManager manager =  getSystemService(NotificationManager.class);
             manager.createNotificationChannel(on);
             manager.createNotificationChannel(off);
