@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,30 +16,28 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:minHeight="?actionBarSize"
         android:padding="@dimen/appbar_padding"
-        android:background="@color/blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textview_border"
+
         android:text="MyApps"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="scheduleJob"
-            android:text="Schedule Job" />
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="scheduleJob"-->
+<!--            android:text="Schedule Job" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="cancelJob"
-            android:text="Cancel Job" />
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="cancelJob"-->
+<!--            android:text="Cancel Job" />-->
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -48,7 +47,6 @@
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-36dp">
         <com.google.android.material.tabs.TabLayout
-
             android:id="@+id/tab"
             app:tabIndicatorColor="@color/azure"
             android:layout_width="match_parent"
