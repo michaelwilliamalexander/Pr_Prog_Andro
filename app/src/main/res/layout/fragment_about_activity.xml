@@ -3,9 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-        <FrameLayout android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            >
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -13,7 +11,7 @@
             android:textColor="@color/black"
             android:hint="Ini adalah About\n\n Nama : Michael William A \n NIM: 71170171"
             android:layout_marginTop="150dp"/>
-        </FrameLayout>
+
 
 
 </RelativeLayout>

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.viewpager.widget.ViewPager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Notification;
 import android.app.job.JobInfo;
@@ -22,8 +21,8 @@ import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
-import static com.example.logins.App.CHANNEL_1;
-import static com.example.logins.App.CHANNEL_2;
+import static com.example.logins.WifiStatus.CHANNEL_1;
+import static com.example.logins.WifiStatus.CHANNEL_2;
 
 public class HomeActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerCompat;

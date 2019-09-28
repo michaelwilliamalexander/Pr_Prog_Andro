@@ -5,13 +5,16 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/tempt">
+    android:id="@+id/tempt"
+    android:background="@drawable/border_recycle">
 
     <ImageView
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/gamabrIcon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_insert_smile"
         />
     <ScrollView
@@ -29,21 +32,24 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:id="@+id/judul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textSize="25dp"
                     android:text="Nothing To Lose "
                      />
 
                 <TextView
+                    android:layout_marginStart="20dp"
                     android:id="@+id/nama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="Michael William Alexander : "
-                    android:textStyle="bold" />
+                     />
             </LinearLayout>
 
     </ScrollView>

@@ -5,7 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
-public class App extends Application {
+public class WifiStatus extends Application {
     public static  final String CHANNEL_1 = "WIFI ON";
     public static  final String CHANNEL_2 = "WIFI OFF";
 

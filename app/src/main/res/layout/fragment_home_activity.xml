@@ -9,9 +9,5 @@
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragRecycle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.367"
-            tools:layout_editor_absoluteX="16dp" />
+            android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>

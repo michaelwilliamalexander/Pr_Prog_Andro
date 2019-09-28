@@ -33,8 +33,15 @@ public class Home extends Fragment {
         super.onCreate(savedInstanceState);
 
         list = new ArrayList<>();
-        list.add(new HomeRecycle("Avenger End Game","Iron Man",R.drawable.ic_insert_smile));
-        list.add(new HomeRecycle("Thor","Dewa Petir", R.drawable.ic_insert_smile));
-        list.add(new HomeRecycle("The Last Airbender","AAG",R.drawable.ic_insert_smile));
+        list.add(new HomeRecycle("Xmen Dark Phoenix","20th Century Fox",R.drawable.xmen));
+        list.add(new HomeRecycle("The Amazing Spiderman","Sony Picture", R.drawable.spiderman));
+        list.add(new HomeRecycle("Pokemon Detective Pikachu","Warner Bros",R.drawable.pikachu));
+        list.add(new HomeRecycle("Skyfall","20th Century Fox",R.drawable.skyfall));
+        list.add(new HomeRecycle("Assassin's Creed ","20th Century Fox", R.drawable.assasin));
+        list.add(new HomeRecycle("Captain America : Civil War","Marvel Studio",R.drawable.civilwar));
+        list.add(new HomeRecycle("Suicide Squad","DC Entertainment",R.drawable.suicidesquad));
+        list.add(new HomeRecycle("John Wick","Warner Bros", R.drawable.johnwick));
+        list.add(new HomeRecycle("Thor Ragnarok","Marvel Studio",R.drawable.thor1));
+        list.add(new HomeRecycle("John Wick 3 Parabellum","20th Century Fox",R.drawable.johnwick3));
     }
 }

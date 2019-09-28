@@ -39,8 +39,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.judul.setText(data.get(position).getJudul());
         holder.nama.setText(data.get(position).getNama());
         holder.gambaricon.setImageResource(data.get(position).getFoto());
-
-
     }
 
     @Override
