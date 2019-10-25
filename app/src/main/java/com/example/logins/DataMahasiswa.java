@@ -11,8 +11,8 @@ public class DataMahasiswa{
 
         public static final  String TABLE_NAME = "dataMahasiswa";
         public static final  String COLUMN_NIM = "nim";
-        public static final  String COLUMN_NAMA = "namaTEXT";
-        public static final  String COLUMN_EMAIL = "emailTEXT";
+        public static final  String COLUMN_NAMA = "nama";
+        public static final  String COLUMN_EMAIL = "email";
 
     }
 }
