@@ -29,7 +29,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         View v;
         v = LayoutInflater.from(context).inflate(R.layout.home_recycle,parent,false);
         MyViewHolder myViewHolder = new MyViewHolder(v);
-
         return myViewHolder;
     }
 
@@ -57,4 +56,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             gambaricon =(ImageView) view.findViewById(R.id.gamabrIcon);
         }
     }
+
+
 }

@@ -12,6 +12,7 @@ public class ViewAdapter extends FragmentPagerAdapter {
         super(fm);
         activitys = new Fragment[]{
                 new Home(),
+                new ListData(),
                 new About()
         };
     }

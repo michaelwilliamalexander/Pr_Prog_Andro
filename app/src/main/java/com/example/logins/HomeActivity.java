@@ -10,13 +10,18 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
@@ -26,6 +31,14 @@ import static com.example.logins.WifiStatus.CHANNEL_2;
 
 public class HomeActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerCompat;
+    private SQLiteDatabase sqLiteDatabase;
+    public static final String DATABASE_NAME="dataMahasiswa.db";
+    public static final int DAATABASE_VERSION =1;
+    private Button button;
+    private  Button btn;
+    private EditText nim;
+    private EditText nama;
+    private EditText email;
     private TextView textView;
     private WifiManager wifiManager;
     private View v;
@@ -41,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_info_qhite);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_info_qhite);
         tabLayout.setElevation(0);
 
         Intent in = getIntent();
@@ -51,6 +64,8 @@ public class HomeActivity extends AppCompatActivity {
         textView.setText(textView.getText()+"\n\n Welcome "+ s);
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
+
+
     }
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -143,5 +158,6 @@ public class HomeActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
+
     }
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/borderlistmahasiswa">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tempt"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:textColor="@color/azure"
+                android:id="@+id/nimList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="71170171"
+                />
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:id="@+id/namaList"
+                android:textColor="@color/azure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Michael William Alexander "
+                />
+            <TextView
+                android:layout_marginStart="20dp"
+                android:id="@+id/emailList"
+                android:textColor="@color/azure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="michael.william@ti.ukdw.ac.id"
+
+                />
+        </LinearLayout>
+
+</LinearLayout>
