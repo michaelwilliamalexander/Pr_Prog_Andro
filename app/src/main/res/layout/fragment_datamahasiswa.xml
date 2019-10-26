@@ -132,14 +132,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Email"
+                    android:text="No Hp"
                     android:textColor="@color/azure" />
 
                 <EditText
                     android:id="@+id/emailInput"
                     android:layout_width="275dp"
                     android:layout_height="37dp"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="428dp"
                     android:background="@drawable/boxlist"
