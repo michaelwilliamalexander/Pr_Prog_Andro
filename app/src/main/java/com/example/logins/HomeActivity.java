@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import static com.example.logins.WifiStatus.CHANNEL_1;
 import static com.example.logins.WifiStatus.CHANNEL_2;
@@ -34,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private SQLiteDatabase sqLiteDatabase;
     public static final String DATABASE_NAME="dataMahasiswa.db";
     public static final int DAATABASE_VERSION =1;
+    private FirebaseAnalytics mFirebaseAnalytics;
     private Button button;
     private  Button btn;
     private EditText nim;
@@ -48,13 +50,21 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+//        Bundle bundle = new Bundle();
+//        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, id);
+//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+//        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+//        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(new ViewAdapter(getSupportFragmentManager()));
 
         TabLayout tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_white);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_info_qhite);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_info_qhite);
         tabLayout.setElevation(0);
 
         Intent in = getIntent();

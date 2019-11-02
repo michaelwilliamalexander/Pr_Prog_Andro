@@ -13,6 +13,7 @@ public class ViewAdapter extends FragmentPagerAdapter {
         activitys = new Fragment[]{
                 new Home(),
                 new ListData(),
+                new Matakuliah(),
                 new About()
         };
     }
