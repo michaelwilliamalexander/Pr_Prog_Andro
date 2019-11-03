@@ -6,10 +6,9 @@ public class Matakuliahs {
     private String mataKuliah;
 
     public Matakuliahs(){
-
     }
 
-    public Matakuliahs(String mataKuliah, int sks, String namaDosen){
+    public Matakuliahs(String mataKuliah,int sks, String namaDosen){
         this.mataKuliah = mataKuliah;
         this.sks = sks;
         this.namaDosen = namaDosen;
@@ -28,7 +27,7 @@ public class Matakuliahs {
     }
 
     public void setSks(int sks) {
-        this.sks = sks;
+         this.sks = sks;
     }
 
     public String getMataKuliah() {
