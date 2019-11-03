@@ -20,7 +20,6 @@
             android:id="@+id/NamaMatakuliah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="IsiMAtkul"
             android:layout_marginStart="10dp"
             android:textColorHint="@color/azure" />
 
@@ -41,7 +40,6 @@
             android:id="@+id/SKS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="IsiMAtkul"
             android:layout_marginStart="47dp"
             android:textColorHint="@color/azure" />
     </LinearLayout>
@@ -61,18 +59,17 @@
             android:id="@+id/namaDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nama Dosen"
             android:layout_marginStart="40dp"
             android:textColorHint="@color/azure" />
     </LinearLayout>
+
     <Button
-        android:id="@+id/editMatkul"
-        android:layout_width="40dp"
+        android:id="@+id/hapusMatkul"
+        android:layout_width="66dp"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/blue_light"
-        android:text="Edit"
-        android:textColor="@color/azure"
-        />
+        android:text="Hapus"
+        android:textColor="@color/azure" />
 </LinearLayout>

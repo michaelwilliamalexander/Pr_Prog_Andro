@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -48,7 +49,8 @@ public class Matakuliah extends Fragment {
         inputNamaDosen = rootView.findViewById(R.id.inputNamaDosen);
         tmbhMAtkul = rootView.findViewById(R.id.tmbhMatkul);
         database = FirebaseFirestore.getInstance();
-        databaseMatkul = FirebaseDatabase.getInstance().getReference().child("Matakuliah");
+//        databaseMatkul = FirebaseDatabase.getInstance().getReference().child("Matakuliah");
+
         tmbhMAtkul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +76,7 @@ public class Matakuliah extends Fragment {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(getContext(), "Data Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
-
+                                    getDataMataKuliah();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -83,7 +85,7 @@ public class Matakuliah extends Fragment {
 
                                 }
                             });
-
+                    getDataMataKuliah();
                     inputMatkul.getText().clear();
                     inputSKS.getText().clear();
                     inputNamaDosen.getText().clear();
@@ -118,6 +120,6 @@ public class Matakuliah extends Fragment {
 
     }
     public void deleteData(){
-
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
     }
 }
